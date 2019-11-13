@@ -23,8 +23,13 @@
           <div style="padding-top: 1%; padding-bottom: 1%;">
             <visor-placa @placa="ingresandoPlaca"></visor-placa>
           </div>
+          <el-alert class="mensaje-alerta" center v-show="mostrar_mensaje" :title="respuesta_validacion" type="success" show-icon></el-alert>
           <div style="padding-top: 1%; padding-bottom: 1%;">
-              <el-button type="primary">Verificar vehículo</el-button>
+            <el-button
+              type="primary"
+              :loading="validandoPlaca"
+              @click="validarPlaca"
+            >Verificar vehículo</el-button>
           </div>
         </el-card>
       </el-main>
@@ -33,12 +38,21 @@
 </template>
 
 <script>
-import { Container, Header, Main, Card, Tag, DatePicker, Button } from "element-ui";
+import {
+  Container,
+  Header,
+  Main,
+  Card,
+  Tag,
+  DatePicker,
+  Button,
+  Alert
+} from "element-ui";
 import VisorPlaca from "./VisorPlaca";
-import lang from 'element-ui/lib/locale/lang/es'
-import locale from 'element-ui/lib/locale'
+import lang from "element-ui/lib/locale/lang/es";
+import locale from "element-ui/lib/locale";
 // configure language
-locale.use(lang)
+locale.use(lang);
 export default {
   name: "pico-placa-component",
   components: {
@@ -49,20 +63,29 @@ export default {
     ElTag: Tag,
     ElDatePicker: DatePicker,
     ElButton: Button,
+    ElAlert: Alert,
     VisorPlaca
   },
   props: {},
   data() {
     return {
-      fecha_validacion: new Date()
+      fecha_validacion: new Date(),
+      validandoPlaca: false,
+      respuesta_validacion: "Vehículo permitido para circular",
+      mostrar_mensaje: false
     };
   },
   mounted() {},
   computed: {},
   methods: {
-      ingresandoPlaca(placa){
-          console.log("Placa: ", placa);
-      }
+    ingresandoPlaca(placa) {
+      console.log("Placa: ", placa);
+    },
+
+    validarPlaca() {
+      this.validandoPlaca = true;
+      this.mostrar_mensaje = true;
+    }
   }
 };
 </script>
@@ -81,5 +104,9 @@ export default {
 
 .step-title {
   font-size: medium;
+}
+
+.mensaje-alerta{
+  width: 30%;
 }
 </style>

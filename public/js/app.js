@@ -3540,6 +3540,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -3556,12 +3561,16 @@ element_ui_lib_locale__WEBPACK_IMPORTED_MODULE_3___default.a.use(element_ui_lib_
     ElTag: element_ui__WEBPACK_IMPORTED_MODULE_0__["Tag"],
     ElDatePicker: element_ui__WEBPACK_IMPORTED_MODULE_0__["DatePicker"],
     ElButton: element_ui__WEBPACK_IMPORTED_MODULE_0__["Button"],
+    ElAlert: element_ui__WEBPACK_IMPORTED_MODULE_0__["Alert"],
     VisorPlaca: _VisorPlaca__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {},
   data: function data() {
     return {
-      fecha_validacion: new Date()
+      fecha_validacion: new Date(),
+      validandoPlaca: false,
+      respuesta_validacion: "Vehículo permitido para circular",
+      mostrar_mensaje: false
     };
   },
   mounted: function mounted() {},
@@ -3569,6 +3578,10 @@ element_ui_lib_locale__WEBPACK_IMPORTED_MODULE_3___default.a.use(element_ui_lib_
   methods: {
     ingresandoPlaca: function ingresandoPlaca(placa) {
       console.log("Placa: ", placa);
+    },
+    validarPlaca: function validarPlaca() {
+      this.validandoPlaca = true;
+      this.mostrar_mensaje = true;
     }
   }
 });
@@ -3586,6 +3599,14 @@ element_ui_lib_locale__WEBPACK_IMPORTED_MODULE_3___default.a.use(element_ui_lib_
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! element-ui */ "./node_modules/element-ui/lib/element-ui.common.js");
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(element_ui__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -9931,7 +9952,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.cabecera[data-v-2c8ef0ea] {\r\n  background-color: #009688;\n}\n.titulo[data-v-2c8ef0ea] {\r\n  text-align: center;\r\n  margin-top: 1%;\r\n  font-size: x-large;\r\n  color: white;\n}\n.step-title[data-v-2c8ef0ea] {\r\n  font-size: medium;\n}\r\n", ""]);
+exports.push([module.i, "\n.cabecera[data-v-2c8ef0ea] {\r\n  background-color: #009688;\n}\n.titulo[data-v-2c8ef0ea] {\r\n  text-align: center;\r\n  margin-top: 1%;\r\n  font-size: x-large;\r\n  color: white;\n}\n.step-title[data-v-2c8ef0ea] {\r\n  font-size: medium;\n}\n.mensaje-alerta[data-v-2c8ef0ea]{\r\n  width: 30%;\n}\r\n", ""]);
 
 // exports
 
@@ -9950,7 +9971,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.cabecera-placa {\r\n  background-image: url(/img/Imagen_Ant2.png);\r\n  height: 50px;\r\n  background-repeat: no-repeat;\r\n  width: 32%;\n}\n.input-placa {\r\n  width: 32%;\r\n  -moz-text-align-last: center;\r\n       text-align-last: center;\n}\n.input-placa.el-input .el-input__inner {\r\n  text-align: center;\r\n  height: 130px !important;\r\n  font-size: 50px;\n}\r\n", ""]);
+exports.push([module.i, "\n@media (max-width: 1920px) {\n.cabecera-placa {\r\n    /*background-image: url(/img/Imagen_Ant2.png);*/\r\n    height: 50px;\r\n    background-repeat: no-repeat;\r\n    width: 32%;\n}\n.input-placa {\r\n    width: 32%;\r\n    -moz-text-align-last: center;\r\n         text-align-last: center;\n}\n.input-placa.el-input .el-input__inner {\r\n    text-align: center;\r\n    height: 130px !important;\r\n    font-size: 240%;\n}\n}\n@media (max-width: 1400px) {\n.cabecera-placa {\r\n    /*background-image: url(/img/Imagen_Ant2.png);*/\r\n    height: 50px;\r\n    background-repeat: no-repeat;\r\n    width: 32%;\n}\n.input-placa {\r\n    width: 32%;\r\n    -moz-text-align-last: center;\r\n         text-align-last: center;\n}\n.input-placa.el-input .el-input__inner {\r\n    text-align: center;\r\n    height: 130px !important;\r\n    font-size: 160%;\n}\n}\n@media (max-width: 870px) {\n.cabecera-placa {\r\n    background-image: url(/img/Imagen_Ant2.png);\r\n    height: 30px;\r\n    background-repeat: no-repeat;\r\n    width: 32%;\n}\n.input-placa {\r\n    width: 32%;\r\n    -moz-text-align-last: center;\r\n         text-align-last: center;\n}\n.input-placa.el-input .el-input__inner {\r\n    text-align: center;\r\n    height: 100px !important;\r\n    font-size: 80%;\n}\n}\n@media (max-width: 500px) {\n.cabecera-placa {\r\n    background-image: url(/img/Imagen_Ant2.png);\r\n    height: 30px;\r\n    background-repeat: no-repeat;\r\n    width: 50%;\n}\n.input-placa {\r\n    width: 50%;\r\n    -moz-text-align-last: center;\r\n         text-align-last: center;\n}\n.input-placa.el-input .el-input__inner {\r\n    text-align: center;\r\n    height: 100px !important;\r\n    font-size: 70%;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -99151,6 +99172,24 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
+                  _c("el-alert", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostrar_mensaje,
+                        expression: "mostrar_mensaje"
+                      }
+                    ],
+                    staticClass: "mensaje-alerta",
+                    attrs: {
+                      center: "",
+                      title: _vm.respuesta_validacion,
+                      type: "success",
+                      "show-icon": ""
+                    }
+                  }),
+                  _vm._v(" "),
                   _c(
                     "div",
                     {
@@ -99160,9 +99199,17 @@ var render = function() {
                       }
                     },
                     [
-                      _c("el-button", { attrs: { type: "primary" } }, [
-                        _vm._v("Verificar vehículo")
-                      ])
+                      _c(
+                        "el-button",
+                        {
+                          attrs: {
+                            type: "primary",
+                            loading: _vm.validandoPlaca
+                          },
+                          on: { click: _vm.validarPlaca }
+                        },
+                        [_vm._v("Verificar vehículo")]
+                      )
                     ],
                     1
                   )
@@ -99205,7 +99252,12 @@ var render = function() {
     "div",
     { staticClass: "placa-container" },
     [
-      _c("el-row", { staticClass: "cabecera-placa" }),
+      _c("el-row", [
+        _c("img", {
+          staticClass: "cabecera-placa",
+          attrs: { src: "img/Imagen_Ant2.png" }
+        })
+      ]),
       _vm._v(" "),
       _c(
         "el-row",
