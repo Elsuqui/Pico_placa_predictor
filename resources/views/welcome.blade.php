@@ -88,11 +88,11 @@
             </div>
 
             <div class="links">
-                <a href="https://laravel.com/docs">My Github</a>
-                <a href="https://laracasts.com">LinkedIn</a>
+                <a href="https://github.com/Elsuqui">My Github</a>
+                <a href="https://www.linkedin.com/in/gorky-suquinagua-4a039b124/">LinkedIn</a>
             </div>
             <div>
-                <a class="boton" href="#">Ingresar</a>
+                <a class="boton" href="{{ url('/home') }}">Ingresar</a>
             </div>
             <div class="links">
                 <span>By Gorky Suquinagua</span>
