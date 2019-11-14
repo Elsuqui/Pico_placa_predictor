@@ -3,10 +3,10 @@ Predictor to show if a car can be on the road or not.
 
 ## Tech
 Pico and placa predictor use:
-*[Laravel] - The PHP Framework for Web Artisans Laravel
-*[Vue] - The Progressive JavaScript Framework
-*[Composer] - A Dependency Manager for PHP
-*[Node.js] - To manage dependencies
+* [Laravel] - The PHP Framework for Web Artisans Laravel
+* [Vue] - The Progressive JavaScript Framework
+* [Composer] - A Dependency Manager for PHP
+* [Node.js] - To manage dependencies
 
 ## Steps to execute project
 ### Clone project
