@@ -10,7 +10,8 @@
 
 <body style="margin: 0px; background-color: #cfd8dc;">
     <div id="app">
-        <pico-placa-component></pico-placa-component>
+        <pico-placa-component :expresion_regular_automovil="{{ '/^[A-Z]{3}-[0-9]{4}$/' }}" :expresion_regular_moto="{{ '/^[A-Z]{2}[0-9]{4}$/' }}">
+        </pico-placa-component>
     </div>
 </body>
 
