@@ -4,11 +4,11 @@
       <img class="cabecera-placa" src="img/Imagen_Ant2.png" />
     </el-row>
     <el-row>
-      <el-col >
+      <el-col>
         <el-input
           @input="emitirPlaca"
           type="text"
-          v-model="placa"
+          :value="placa"
           class="input-placa"
           placeholder="NÚMERO DE PLACA"
         ></el-input>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { Row, Col, Container, Image, Input,  } from "element-ui";
+import { Row, Col, Container, Image, Input } from "element-ui";
 export default {
   name: "visor-placa",
   components: {
@@ -29,25 +29,32 @@ export default {
     ElInput: Input
   },
   props: {
-    separador: { type: String },
-    numero_separaciones: { type: Number },
-    expresion_regular: { type: String }
+    limite_caracteres: { type: Number },
+    value: { type: String }
   },
   data() {
     return {
       placa: ""
     };
   },
+  watch:{
+    value(){
+      this.placa = this.value;
+    }
+  },
   methods: {
-    emitirPlaca() {
-      this.$emit("placa", this.placa);
+    emitirPlaca(value) {
+      if (value.length <= this.limite_caracteres) {
+        this.placa = value;
+        this.placa = this.placa.toUpperCase();
+        this.$emit("placa", this.placa);
+      }
     }
   }
 };
 </script>
 
 <style>
-
 @media (max-width: 1920px) {
   .cabecera-placa {
     /*background-image: url(/img/Imagen_Ant2.png);*/
@@ -127,5 +134,4 @@ export default {
     font-size: 70%;
   }
 }
-
 </style>
